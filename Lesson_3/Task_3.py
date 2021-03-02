@@ -1,10 +1,10 @@
-def thesaurus():
-    """Sort of names by first letter."""
-    lst = ("Иван", "Мария", "Петр", "Илья", "Маргарита", "Павел")
+def thesaurus(*names):
+    """Sort of names by first letter. Arguments are names in the format 'Name', 'Name'"""
+    lst_names = [*names]
     my_dict = {}
-    for el in lst:
-        my_dict[el[0]] = list(filter(lambda x: x.startswith(el[0]), lst))
+    for el in lst_names:
+        my_dict[el[0]] = list(filter(lambda x: x.startswith(el[0]), lst_names))
     return my_dict
 
 
-print(thesaurus())
+print(thesaurus('Иван', 'Мария', 'Илья', 'Петр'))
